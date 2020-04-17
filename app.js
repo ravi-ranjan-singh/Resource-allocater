@@ -156,3 +156,49 @@ window.onload = (e) => {
   document.querySelector('.btn-grant').addEventListener('click', assignAgent);
   document.querySelector('.btn-revoke').addEventListener('click', revokeAgent);
 };
+
+const input = document.querySelector('input');
+
+const changeMode = () => {
+  let bodyStyle = document.querySelector('body').style;
+  let h1Style = document.querySelector('h1').style;
+  let containerStyle = document.querySelector('.container').style;
+  let availableStyle = document.querySelector('.available').style;
+  let assignedStyle = document.querySelector('.assigned').style;
+  let btns = Array.from(document.querySelectorAll('.btn'));
+  let btnStyle1 = btns[0].style;
+  let btnStyle2 = btns[1].style;
+  if (input.checked) {
+    btnStyle1.backgroundColor = '#2F2F2F';
+    btnStyle2.backgroundColor = '#2F2F2F';
+    bodyStyle.backgroundColor = '#292929';
+    h1Style.color = '#ffffff';
+    availableStyle.color = 'rgb(110,110,110)';
+    assignedStyle.color = 'rgb(110,110,110)';
+    containerStyle.backgroundColor = '#000000';
+    availableStyle.backgroundColor = '#292929';
+    assignedStyle.backgroundColor = '#292929';
+    assignedStyle.border = '1px solid rgb(55,55,55)';
+    availableStyle.border = '1px solid rgb(40,40,40)';
+    containerStyle.border = '1px solid rgb(65,65,65)';
+    containerStyle.boxShadow = '4px 5px 8px -1px rgb(0, 0, 0)';
+    bodyStyle.color = '#fff';
+  } else {
+    btnStyle1.backgroundColor = 'dodgerblue';
+    btnStyle2.backgroundColor = 'dodgerblue';
+    h1Style.color = 'rgb(9, 0, 136)';
+    bodyStyle.backgroundColor = '#fff';
+    containerStyle.backgroundColor = '#fff';
+    availableStyle.backgroundColor = '#fff';
+    assignedStyle.backgroundColor = '#fff';
+    containerStyle.border = '1px solid rgb(221, 221, 221)';
+    containerStyle.boxShadow = '4px 5px 8px -1px rgb(199, 199, 199)';
+    assignedStyle.border = '1px solid rgb(235, 235, 235)';
+    availableStyle.border = '1px solid rgb(235, 235, 235)';
+    bodyStyle.color = '#000000';
+    availableStyle.color = 'rgb(0,0,0)';
+    assignedStyle.color = 'rgb(0,0,0)';
+  }
+};
+
+input.addEventListener('change', changeMode);

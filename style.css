@@ -88,9 +88,6 @@ li > span {
   background-color: rgb(51, 51, 255);
   border-radius: 5px;
 }
-::-webkit-scrollbar-track {
-  border: 1px solid #f1f1f1;
-}
 
 h2 {
   color: #888888;
@@ -119,6 +116,48 @@ h1::after {
   left: 50%;
   transform: translateX(-50%);
   top: 65px;
+}
+
+.mode {
+  display: flex;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+input[type='checkbox'] {
+  margin-right: 20px;
+  order: -1;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #c6c6c6;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0.2);
+  transition: 0.5s;
+}
+
+input:checked[type='checkbox'] {
+  background: #03a9f4;
+}
+
+input[type='checkbox']::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+input:checked[type='checkbox']::before {
+  left: 20px;
 }
 
 /*------------------------------------Responsive design-------------------------------*/
@@ -178,4 +217,8 @@ h1::after {
     width: 90%;
     top: 40px;
   }
+}
+
+.color {
+  background-color: rgb(43, 43, 43);
 }
